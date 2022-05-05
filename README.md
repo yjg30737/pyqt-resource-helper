@@ -5,7 +5,7 @@ Setting icons, stylesheets of imported packages based on main module's path to p
 PyQt5 >= 5.8
 
 ## Setup
-```pip3 install git+https://github.com/yjg30737/pyqt-resource-helper.git --upgrade```
+`pip3 install pyqt-resource-helper`
 
 ## Usage
 ```python
