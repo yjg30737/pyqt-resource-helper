@@ -1,4 +1,4 @@
-import os, inspect, sys
+import os, inspect, sys, re
 
 from PyQt5.QtGui import QIcon
 
@@ -34,3 +34,18 @@ class PyQtResourceHelper:
             for i in range(len(widgets)):
                 css_code = getStyleSheetOf(i)
                 widgets[i].setStyleSheet(css_code)
+
+    @staticmethod
+    def addStyleToWidget(widget, tag, attr):
+        style_sheet_text = widget.styleSheet()
+        css_tag_regex = '\s*{\n?(.|\n)*?\n?}'
+        ms = re.finditer(tag+css_tag_regex, style_sheet_text)
+        lst = [m for m in ms]
+        ms_len = len(lst)
+        if ms_len:
+            for m in lst:
+                style_sheet_tag_to_changed = m.group()[:-1]
+                style_sheet_text = style_sheet_text.replace(style_sheet_tag_to_changed, '')
+                widget.setStyleSheet(style_sheet_tag_to_changed + attr + ';}' + widget.styleSheet()[m.span()[1]:])
+        else:
+            widget.setStyleSheet(style_sheet_text + tag + ' {' + attr + ';}')
