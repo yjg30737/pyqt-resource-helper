@@ -1,6 +1,8 @@
 # pyqt-resource-helper
 Setting icons, stylesheets of imported packages based on main module's path to prevent FileNotFoundError
 
+Can be used in PyQt5, PyQt6, PySide2, PySide6.
+
 ## Requirements
 PyQt5 >= 5.8
 
