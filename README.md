@@ -4,7 +4,7 @@ Setting icons, stylesheets of imported packages based on main module's path to p
 This can be used for PySide as well. But it is not written in requirements. Basically this is for PyQt.
 
 ## Requirements
-PyQt5 >= 5.8
+PyQt6 >= 6.5.0
 
 ## Setup
 `python -m pip install pyqt-resource-helper`

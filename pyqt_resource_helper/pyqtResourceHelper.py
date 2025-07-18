@@ -1,6 +1,9 @@
-import os, inspect, sys, re
+import inspect
+import os
+import re
+import sys
 
-from PyQt5.QtGui import QIcon
+from PyQt6.QtGui import QIcon
 
 
 class PyQtResourceHelper:
